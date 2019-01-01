@@ -1,1 +1,10 @@
 https://stackoverflow.com/questions/53991723/javascript-code-does-not-work-after-reactdom-used
+
+ANSWER:
+Take a look at this line: <div id="hello"><div>.
+You meant to write <div id="hello"></div> but missed the slash.
+
+This means that when ReactDOM renders your class into the hello div, it overwrites everything, because everything is inside the hello div, including itself and that other script tag. 
+
+CONCLUSION:
+I must analyze code outside a WebBrowser, before any script was invoked.
